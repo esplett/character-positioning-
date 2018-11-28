@@ -1,18 +1,14 @@
-function countLetters(count){
- var object = {}
-
-for (const x of count) {
-
-if (x === " ") {
-
- } else if (object[x] === undefined) {
-   object[x] = 1
- } else {
-   object[x] ++
+function index(word) {
+ var characters = {}
+   for (var i = 0; i < word.length; i++) {
+     var letter = word[i]
+     if (characters[letter] !== undefined) {
+       characters[letter].push(i)
+     } else {
+   characters[letter] = [i]
+ }
+     }
+   return characters;
  }
 
-}
-return object
-}
-
-console.log(countLetters("This is a test string"))
+console.log(index("lighthouseinthehouse"))
